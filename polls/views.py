@@ -53,3 +53,13 @@ def vote(request, question_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
+def new(request):
+    params = {'word': '', 'name': '', 'form': None}
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        params['word'] = request.POST['word']
+        params['name'] = request.POST['name']
+        params['form'] = form
+    else:
+        params['form'] = UserForm()
+    return render(request, 'user/new.html', params)
