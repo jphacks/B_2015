@@ -4,11 +4,6 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
-class InputForm(models.Model):
-    name = models.CharField()
-    age = models.IntegerFiels();
-    comment = models.TextField()
-
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
