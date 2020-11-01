@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf.urls import url
+from polls import views
 
 from . import views
 
