@@ -120,4 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = "/home/sitm/sitm.pythonanywhere.com/polls/static"
+# or, eg,
+
 
