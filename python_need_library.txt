@@ -1,0 +1,5 @@
+installしたものたち
+requests
+beautifulsoup4
+janome
+#意外と少なかった><
