@@ -9,6 +9,27 @@ from django.views import generic
 from .models import Choice, Question
 from django.utils import timezone
 
+from django.shortcuts import render
+
+
+# def calc(request):
+#     val1 = int(request.POST.get('val1'))
+#     val2 = int(request.POST.get('val2'))
+#     answer = val1 + val2
+#     answer = request.POST.get('val1')
+#     context = {
+#         'answer': answer,
+#     }
+#     return render(request, 'inquiry.html', context)
+
+def calc(request):
+    
+    answer = request.POST.get('val1')
+    context = {
+        'answer': answer,
+    }
+    return render(request, 'inquiry.html', context)
+
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
