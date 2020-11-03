@@ -10,6 +10,7 @@ from .models import Choice, Question
 from django.utils import timezone
 
 from django.shortcuts import render
+from janome.tokenizer import Tokenizer
 
 
 # def calc(request):
@@ -29,7 +30,6 @@ def calc(request):
         'answer': answer,
     }
     return render(request, 'inquiry.html', context)
-
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
