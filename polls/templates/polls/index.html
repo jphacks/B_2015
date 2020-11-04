@@ -28,14 +28,13 @@
         
         <div class="contact-form">
             <h3 class="section-title">探したいワード</h3>
-            <!-- <input type="text" id="word" /> -->
             <input type="text" size="50" id="input_form">
-            <!-- <input class="contact-submit" type="submit" value="送信" id="execute"> -->
-            <button type="button" onclick="clickBtn()">送信</button>
+            <input class="contact-submit" type="submit" value="探す" onclick="clickBtn()">
+            <!-- <button type="button" class="contact-submit" onclick="clickBtn()">探す</button> -->
 
             <!-- views.pyから渡された文字列を表示する。 -->
             <br>
-            <span id="text"></span>
+            <span id="text" class="result"></span>
 
             <script>
                 function clickBtn() {
@@ -56,6 +55,7 @@
                       console.log("error")
                     }
                   })
+
                   .done(function(data) {
                     // views.pyのcall_bungou()にてreturnしたHttpResponse(data)のデータはここで取得できる。
                     // フォームの下部に追記したspan部分の内容を書き換える。
@@ -89,7 +89,8 @@
         
               </script>
 
-   <!-- <a href="{% url 'polls:calc' %}">INQUIRY</a> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
 
+        <div id="page_top"><a href="#"></a></div>
     </body>
 </html>
