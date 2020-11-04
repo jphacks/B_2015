@@ -10,7 +10,8 @@ from .models import Choice, Question
 from django.utils import timezone
 
 from django.shortcuts import render
-from janome.tokenizer import Tokenizer
+# from janome.tokenizer import Tokenizer
+import janome
 
 
 # def calc(request):
