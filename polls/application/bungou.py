@@ -231,7 +231,7 @@ class pycolor:
 import os
 import csv
 
-def search(param):
+"""def search(param):
     # param = input()
     from dictionary import make_synonym_dict
     synonym_dict = {}
@@ -258,8 +258,47 @@ def search(param):
     with open(os.getcwd()+'/polls/application/'+'data.csv','a') as f:
         writer = csv.writer(f, lineterminator='\n,')
         writer.writerow(datas)
-        # writer.writerow("DONE")
-        
+        # writer.writerow("DONE")"""
+
+def search(param): 
+        #from janome.tokenizer import Tokenizer
+    #t = Tokenizer()
+    #print(param2)
+    def search2(param):
+        param2 = '"' + param + '":'
+        gokan_sentence_list = []
+        with open('tanizaki_gokan_dict.tsv', encoding = 'utf-8')as f:
+            for line in f:
+                #print(line)
+                if param2 in line:
+                    _,line = line.split(param2)
+                    gokan_sentence_list = line.split('\t')
+                    break
+        if gokan_sentence_list == []:
+            return []
+        return gokan_sentence_list
+
+
+    gokan_sentence_list = search2(param)
+    #print(gokan_dict)          
+    from dictionary import make_synonym_dict
+    synonym_dict = {}
+    synonym_dict=make_synonym_dict(param)
+    #print(synonym_dict)
+    for synonym in synonym_dict[param]:
+            #print(synonym)
+            gokan_sentence_list += search(synonym)
+            #if gokan_dict.get(synonym):
+    #for sentence in gokan_sentence_list:
+    with open(os.getcwd()+'/polls/application/'+'data.csv','a') as f:
+        for sentence in gokan_sentence_list:
+            f.write(sentence + '\n')
+            #writer.writerow(gokan_sentence_list)
+        # writer.writerow("DONE")"""
+    
+
+
+
 # 以下を追記(return_text()を呼び出すと"Hello!!"が返される)        
 def return_text():
     # return "Hello!"
@@ -271,6 +310,7 @@ def return_text():
             datas.append(row)
     os.remove('polls/application/data.csv')
     return datas
+
 
     """
     with open(os.getcwd()+'/polls/application/'+'data.csv','a') as f:
