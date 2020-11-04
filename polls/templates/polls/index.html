@@ -1,15 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>文豪のすゝめ</title>
-        
-        {% load static %}
-
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel='stylesheet' type='text/css' href="{% static 'style.css' %}"/>
+        <script type="text/javascript" src="{% static 'script.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
     </head>
-
+    
     <body>
         <!-- <script type="text/python" src="static/search.py"></script> -->
         <!-- <div class="header">
@@ -25,27 +25,66 @@
                 </div>
             </div>
         </header>
+        
         <div class="contact-form">
             <h3 class="section-title">探したいワード</h3>
-            <input type="text" id="word" />
-            <input class="contact-submit" type="submit" value="送信" id="execute">
+            <!-- <input type="text" id="word" /> -->
+            <input type="text" size="50" id="input_form">
+            <!-- <input class="contact-submit" type="submit" value="送信" id="execute"> -->
+            <button type="button" onclick="clickBtn()">送信</button>
+
+            <script>
+                function clickBtn() {
+                  var txt = document.getElementById("input_form").value;
+        
+                  $.ajax({
+                    url: "{% url 'polls:call_bungou' %}",
+                    method: 'GET',
+                    data: {"input_data": txt},
+                    dataType: "text",
+                    contentType: "application/json",
+                    beforeSend: function(xhr, settings) {
+                      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrf_token);
+                      }
+                    },
+                    error: function(xhr, status, error) {
+                      console.log("error")
+                    }
+                  })
+                  .done(function(data) {
+                    console.log("Success"); 
+                  });
+        
+                  // csrf_tokenの取得に使う
+                  function getCookie(name) {
+                    var cookieValue = null;
+                    if (document.cookie && document.cookie !== '') {
+                      var cookies = document.cookie.split(';');
+                      for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                          break;
+                        }
+                      }
+                    }
+                    return cookieValue;
+                  }
+        
+                  // ヘッダにcsrf_tokenを付与する関数
+                  function csrfSafeMethod(method) {
+                    // these HTTP methods do not require CSRF protection
+                    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+                  };
+                }
+        
+              </script>
 
     <div id="result"></div>
 
-   <a href="{% url 'polls:calc' %}">INQUIRY</a>
+   <!-- <a href="{% url 'polls:calc' %}">INQUIRY</a> -->
 
     </body>
 </html>
-<!-- {% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %} -->

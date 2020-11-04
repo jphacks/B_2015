@@ -1,8 +1,8 @@
 param = input()
 
 def main(param):
-    from janome.tokenizer import Tokenizer
-    t = Tokenizer()
+    #from janome.tokenizer import Tokenizer
+    #t = Tokenizer()
     #print(param2)
     def search(param):
         param2 = '"' + param + '":'
@@ -13,7 +13,7 @@ def main(param):
                 if param2 in line:
                     _,line = line.split(param2)
                     gokan_sentence_list = line.split('\t')
-                    break;
+                    break
         if gokan_sentence_list == []:
             return []
         return gokan_sentence_list

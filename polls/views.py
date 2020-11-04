@@ -10,7 +10,8 @@ from .models import Choice, Question
 from django.utils import timezone
 
 from django.shortcuts import render
-from janome.tokenizer import Tokenizer
+
+from .application import bungou
 
 
 # def calc(request):
@@ -84,3 +85,11 @@ def new(request):
     else:
         params['form'] = UserForm()
     return render(request, 'user/new.html', params)
+
+# ajaxでurl指定したメソッド
+def call_bungou(req):
+    if req.method == 'GET':
+        # bungo.pyのsearch()メソッドを呼び出す。
+        # ajaxで送信したデータのうち"input_data"を指定して取得する。
+        bungou.search(req.GET.get("input_data"))
+        return HttpResponse()

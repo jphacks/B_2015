@@ -1,3 +1,5 @@
+# 以下ほぼ彩花ちゃんのコピペ
+
 import requests
 
 url_1 = 'https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip'
@@ -189,7 +191,8 @@ info.update(make_info(original_text_5,sentences_5))
 
 ####################################################################
 
-from janome.tokenizer import Tokenizer
+#ここは関数化しない方がいいのかな... viewsよくわからん
+from janome.tokenizer import Tokenizer # これヤバそうぽい
 BEGIN = '__BEGIN__'
 END = '__END__' 
 
@@ -222,27 +225,26 @@ class pycolor:
     END = '\033[0m'
     
 
-param = input()
-from dictionary import make_synonym_dict
-synonym_dict = {}
-synonym_dict=make_synonym_dict(param)
-for synonym in synonym_dict[param]:
-    if gokan_dict.get(synonym):
-        for sentence in gokan_dict[synonym]:
-            words=t.tokenize(sentence)
-            words=list(words)
-            #b=False
-            #text1 = ""
+def search():
+    param = input()
+    from dictionary import make_synonym_dict
+    synonym_dict = {}
+    synonym_dict=make_synonym_dict(param)
+    for synonym in synonym_dict[param]:
+        if gokan_dict.get(synonym):
+            for sentence in gokan_dict[synonym]:
+                words=t.tokenize(sentence)
+                words=list(words)
+                #b=False
+                #text1 = ""
 
-            #text2 = ""
-            for word in words:
+                #text2 = ""
+                for word in words:
 
-                if word.base_form==synonym:
-                    #b=True
-                    param2=word.surface
-                    text_list = sentence.split(word.surface)
-                    break
+                    if word.base_form==synonym:
+                        #b=True
+                        param2=word.surface
+                        text_list = sentence.split(word.surface)
+                        break
 
-            print(text_list[0]+pycolor.BLUE+param2+pycolor.END+text_list[1]+':'+info[sentence][0]+','+info[sentence][1])
-
-synonym_dict
+                print(text_list[0]+pycolor.BLUE+param2+pycolor.END+text_list[1]+':'+info[sentence][0]+','+info[sentence][1])
