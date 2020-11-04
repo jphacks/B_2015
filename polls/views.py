@@ -10,20 +10,25 @@ from .models import Choice, Question
 from django.utils import timezone
 
 from django.shortcuts import render
+from django.http import HttpResponse
 
+# application/bungou.pyをインポートする
 from .application import bungou
 
+# ajaxでurl指定したメソッド
+def call_bungou(req):
+    if req.method == 'GET':
+        # bungo.pyのsearch()メソッドを呼び出す。
+        # ajaxで送信したデータのうち"input_data"を指定して取得する。
+        bungou.search(req.GET.get("input_data"))
 
-# def calc(request):
-#     val1 = int(request.POST.get('val1'))
-#     val2 = int(request.POST.get('val2'))
-#     answer = val1 + val2
-#     answer = request.POST.get('val1')
-#     context = {
-#         'answer': answer,
-#     }
-#     return render(request, 'inquiry.html', context)
+        # bungo.pyの中に新たに記述したメソッド(return_text())を呼び出す。
+        data = bungou.return_text()
+        # 受け取ったデータをhtmlに渡す。
+        return HttpResponse(data)
 
+
+# 使ってないけどurls修正だるいのでとりあえず放置
 def calc(request):
     
     answer = request.POST.get('val1')
@@ -31,6 +36,7 @@ def calc(request):
         'answer': answer,
     }
     return render(request, 'inquiry.html', context)
+
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -85,11 +91,3 @@ def new(request):
     else:
         params['form'] = UserForm()
     return render(request, 'user/new.html', params)
-
-# ajaxでurl指定したメソッド
-def call_bungou(req):
-    if req.method == 'GET':
-        # bungo.pyのsearch()メソッドを呼び出す。
-        # ajaxで送信したデータのうち"input_data"を指定して取得する。
-        bungou.search(req.GET.get("input_data"))
-        return HttpResponse()
