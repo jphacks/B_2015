@@ -33,6 +33,10 @@
             <!-- <input class="contact-submit" type="submit" value="送信" id="execute"> -->
             <button type="button" onclick="clickBtn()">送信</button>
 
+            <!-- views.pyから渡された文字列を表示する。 -->
+            <br>
+            <span id="text"></span>
+
             <script>
                 function clickBtn() {
                   var txt = document.getElementById("input_form").value;
@@ -53,7 +57,10 @@
                     }
                   })
                   .done(function(data) {
-                    console.log("Success"); 
+                    // views.pyのcall_bungou()にてreturnしたHttpResponse(data)のデータはここで取得できる。
+                    // フォームの下部に追記したspan部分の内容を書き換える。
+                    document.getElementById("text").textContent = data;
+                    console.log("Success");
                   });
         
                   // csrf_tokenの取得に使う
@@ -81,8 +88,6 @@
                 }
         
               </script>
-
-    <div id="result"></div>
 
    <!-- <a href="{% url 'polls:calc' %}">INQUIRY</a> -->
 
