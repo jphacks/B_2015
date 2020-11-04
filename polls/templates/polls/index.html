@@ -8,21 +8,27 @@
 
         <link rel="stylesheet" href="stylesheet.css">
         <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-        <script src="static/brython.js"></script>
-        <script src="static/brython_stdlib.js"></script>
     </head>
 
-    <body onload="brython()">
-        <script type="text/python" src="static/search.py"></script>
-        <div class="header">
+    <body>
+        <!-- <script type="text/python" src="static/search.py"></script> -->
+        <!-- <div class="header">
             <div class="header-logo">文豪のすゝめ</div>
-        </div>
-    
+        </div> -->
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <div class="logo">   文豪のすゝめ </div>
+                </div>
+                <div class="header-right">
+                    <a href="#" class="login">ログイン</a>
+                </div>
+            </div>
+        </header>
         <div class="contact-form">
             <h3 class="section-title">探したいワード</h3>
             <input type="text" id="word" />
             <input class="contact-submit" type="submit" value="送信" id="execute">
-                <!-- <br><button id="execute">探す</button> -->
 
     <div id="result"></div>
 

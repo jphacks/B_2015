@@ -1,28 +1,67 @@
-body {
-    font-family: "Avenir Next";
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
   }
   
+  a {
+    text-decoration: none;
+  }
+
   li {
     list-style: none;
   }
   
-  .header {
-    background-color: #26d0c9;
+  /* .header {
+    background-color: #9e3d3f;
     color: #fff;
     height: 90px;
+  } */
+
+  header {
+    height: 90px;
+    width: 100%;
+    background-color: #9e3d3f;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  }
+
+  .logo {
+    font-size: 36px;
+    height: 100px;
+    color: #fff;
+    font-family: "YuMincho";
   }
   
   .header-logo {
     float: left;
     font-size: 36px;
-    padding: 20px 40px;
+    padding: 40px 40px;
   }
-  
-  .header-list li {
+
+  .header-left {
     float: left;
-    padding: 33px 20px;
+    padding: 20px 50px;
   }
   
+  .header-right {
+    float: right;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s;
+    font-family: "YuMincho";
+  }
+
+  .header-right:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .header-right a {
+    line-height: 90px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+  }
+
   .main {
     padding: 100px 80px;
   }
@@ -47,6 +86,7 @@ body {
   .section-title {
     border-bottom: 2px solid #dee7ec;
     font-size: 28px;
+    padding-left: 40px;
     padding-bottom: 15px;
     margin-bottom: 50px;
   }
@@ -68,6 +108,7 @@ body {
   input, textarea {
     width: 400px;
     margin-top: 10px;
+    margin-left: 30px;
     margin-bottom: 30px;
     padding: 20px;
     font-size: 18px;
@@ -77,6 +118,7 @@ body {
   .contact-submit {
     background-color: #dee7ec;
     color: #889eab;
+    width: 80px;
   }
   
   .footer {
