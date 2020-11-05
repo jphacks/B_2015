@@ -2,16 +2,18 @@
 
 import requests
 
+ headers = {'User-Agent':https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip}
+
 url_1 = 'https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip'
 url_2 = 'https://www.aozora.gr.jp/cards/000035/files/1565_ruby_8220.zip'
 url_3 = 'https://www.aozora.gr.jp/cards/000035/files/1567_ruby_4948.zip'
 url_4 = 'https://www.aozora.gr.jp/cards/000035/files/1569_ruby_18584.zip'
 url_5 = 'https://www.aozora.gr.jp/cards/000035/files/270_ruby_1164.zip'
-r_1 = requests.get(url_1)
-r_2 = requests.get(url_2)
-r_3 = requests.get(url_3)
-r_4 = requests.get(url_4)
-r_5 = requests.get(url_5)
+r_1 = requests.get(url_1, headers= headers)
+r_2 = requests.get(url_2, headers= headers)
+r_3 = requests.get(url_3, headers= headers)
+r_4 = requests.get(url_4, headers= headers)
+r_5 = requests.get(url_5, headers= headers)
 content_1 = r_1.content
 content_2 = r_2.content
 content_3 = r_3.content
