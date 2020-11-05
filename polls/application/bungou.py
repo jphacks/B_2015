@@ -3,7 +3,7 @@
 import requests
 
 
-headers = {'User-Agent':'https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip'}
+headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
 
 url_1 = 'https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip'
 url_2 = 'https://www.aozora.gr.jp/cards/000035/files/1565_ruby_8220.zip'
