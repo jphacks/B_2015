@@ -273,7 +273,7 @@ def search(param):
     def search2(param):
         param2 = '"' + param + '":'
         gokan_sentence_list = []
-        with open('natume_gokan_dict.tsv', encoding = 'utf-8')as f:
+        with open(os.getcwd()+'/polls/application/'+'natume_gokan_dict.tsv', encoding = 'utf-8')as f:
             for line in f:
                 #print(line)
                 if param2 in line:
@@ -291,7 +291,7 @@ def search(param):
     synonym_dict = {}
     #synonym_dict=make_synonym_dict(param)
     #print(synonym_dict)
-    with open('nemuru_synonym_dict.tsv', encoding = 'utf-8')as f:
+    with open(os.getcwd()+'/polls/application/'+'nemuru_synonym_dict.tsv', encoding = 'utf-8')as f:
             for line in f:
                 if param in line:
                     param2 = '"'+param+'":'
@@ -301,7 +301,7 @@ def search(param):
     
     for synonym in synonym_dict[param]:
             #print(synonym)
-            gokan_sentence_list += search2(synonym)
+        gokan_sentence_list += search2(synonym)
             #if gokan_dict.get(synonym):
     #for sentence in gokan_sentence_list:
     with open(os.getcwd()+'/polls/application/'+'data.csv','a') as f:
