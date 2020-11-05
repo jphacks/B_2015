@@ -4,37 +4,32 @@
     <head>
         <meta charset="utf-8">
         <title>文豪のすゝめ</title>
-        <link rel='stylesheet' type='text/css' href="{% static 'style.css' %}"/>
         <script type="text/javascript" src="{% static 'script.js' %}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
     </head>
     
     <body>
-        <!-- <script type="text/python" src="static/search.py"></script> -->
-        <!-- <div class="header">
-            <div class="header-logo">文豪のすゝめ</div>
-        </div> -->
         <header>
             <div class="container">
                 <div class="header-left">
                     <div class="logo">   文豪のすゝめ </div>
                 </div>
                 <div class="header-right">
-                    <a href="#" class="login">ログイン</a>
+                    <a href="./login.html" class="login"> ログイン</a>
                 </div>
             </div>
         </header>
         
         <div class="contact-form">
             <h3 class="section-title">探したいワード</h3>
-            <input type="text" size="50" id="input_form">
+            <input type="text" size="50" id="input_form" placeholder="例) 書く">
             <input class="contact-submit" type="submit" value="探す" onclick="clickBtn()">
             <!-- <button type="button" class="contact-submit" onclick="clickBtn()">探す</button> -->
 
             <!-- views.pyから渡された文字列を表示する。 -->
-            <br>
-            <span id="text" class="result"></span>
+            <h3 class="section-title">検索結果</h3>
+            <div id="text" class="result" placeholder="検索結果"> </div>
 
             <script>
                 function clickBtn() {
@@ -94,3 +89,4 @@
         <div id="page_top"><a href="#"></a></div>
     </body>
 </html>
+

@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN";
@@ -66,18 +67,6 @@ header {
   padding: 100px 80px;
 }
 
-.copy-container h1 {
-  font-size: 140px;
-}
-
-.copy-container h2 {
-  font-size: 60px;
-}
-
-.copy-container span {
-  color: #ff4a4a;
-}
-
 .contents {
   height: 500px;
   margin-top: 100px;
@@ -115,9 +104,9 @@ input, textarea {
   border: 1px solid #dee7ec;
 }
 
-result {
-  width: 800px;
-  margin-top: 10px;
+.result {
+  width : 90vw;
+  margin-top: 25px;
   margin-left: 30px;
   margin-bottom: 30px;
   padding: 20px;
@@ -126,9 +115,20 @@ result {
 }
 
 .contact-submit {
-  background-color: #dee7ec;
-  color: #889eab;
+  background-color: rgba(158, 126, 127);
+  color: white;
+  transition: all 0.5s;
   width: 80px;
+}
+
+.contact-submit a {
+  line-height: 90px;
+  padding: 0 25px;
+  display: block;
+}
+
+.contact-submit:hover {
+  background-color: rgba(158, 126, 127, 0.5);
 }
 
 #page_top{
@@ -137,7 +137,7 @@ result {
   position: fixed;
   right: 0;
   bottom: 0;
-  background: #9e3d3f;
+  background: #993c3d;
   opacity: 0.6;
 }
 #page_top a{
@@ -183,3 +183,5 @@ result {
 .footer-list li {
   padding-bottom: 20px;
 }
+
+
