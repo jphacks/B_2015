@@ -2,11 +2,8 @@
 
 import requests
 
-<<<<<<< HEAD
-headers = {'https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip'}
-=======
- headers = {'User-Agent':https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip}
->>>>>>> cb8d68a968a1a08043e0e157f9b0cbe3c5bfcfbf
+
+headers = {'User-Agent':https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip}
 
 url_1 = 'https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip'
 url_2 = 'https://www.aozora.gr.jp/cards/000035/files/1565_ruby_8220.zip'
