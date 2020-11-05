@@ -1,6 +1,6 @@
 # 以下ほぼ彩花ちゃんのコピペ
 
-import requests
+"""import requests
 
 
 headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36'}
@@ -234,7 +234,8 @@ class pycolor:
 import os
 import csv
 
-"""def search(param):
+
+def search(param):
     # param = input()
     from dictionary import make_synonym_dict
     synonym_dict = {}
@@ -262,7 +263,9 @@ import csv
         writer = csv.writer(f, lineterminator='\n,')
         writer.writerow(datas)
         # writer.writerow("DONE")"""
-
+import os
+import csv
+#from dictionary import make_synonym_dict
 def search(param):
         #from janome.tokenizer import Tokenizer
     #t = Tokenizer()
@@ -270,7 +273,7 @@ def search(param):
     def search2(param):
         param2 = '"' + param + '":'
         gokan_sentence_list = []
-        with open('tanizaki_gokan_dict.tsv', encoding = 'utf-8')as f:
+        with open('natume_gokan_dict.tsv', encoding = 'utf-8')as f:
             for line in f:
                 #print(line)
                 if param2 in line:
@@ -284,13 +287,21 @@ def search(param):
 
     gokan_sentence_list = search2(param)
     #print(gokan_dict)
-    from dictionary import make_synonym_dict
+    
     synonym_dict = {}
-    synonym_dict=make_synonym_dict(param)
+    #synonym_dict=make_synonym_dict(param)
     #print(synonym_dict)
+    with open('nemuru_synonym_dict.tsv', encoding = 'utf-8')as f:
+            for line in f:
+                if param in line:
+                    param2 = '"'+param+'":'
+                    _,line = line.split(param2)
+                    synonym_dict[param] = line.split('\t')
+
+    
     for synonym in synonym_dict[param]:
             #print(synonym)
-            gokan_sentence_list += search(synonym)
+            gokan_sentence_list += search2(synonym)
             #if gokan_dict.get(synonym):
     #for sentence in gokan_sentence_list:
     with open(os.getcwd()+'/polls/application/'+'data.csv','a') as f:
