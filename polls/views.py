@@ -1,6 +1,4 @@
 
-        
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
@@ -56,7 +54,8 @@ class DetailView(generic.DetailView):
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
 
-
+def login(req):
+    return render(req, 'login.html')
 
 class ResultsView(generic.DetailView):
     model = Question
