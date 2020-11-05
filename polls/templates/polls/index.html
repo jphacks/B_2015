@@ -29,7 +29,12 @@
 
             <!-- views.pyから渡された文字列を表示する。 -->
             <h3 class="section-title">検索結果</h3>
-            <div id="text" class="result"> </div>
+            <!--div id="text" class="result"> </div-->
+            <ul>
+            <li id="text" class="result"></li>
+            </ul>
+          
+
 
             <script>
                 function clickBtn() {
@@ -54,8 +59,14 @@
                   .done(function(data) {
                     // views.pyのcall_bungou()にてreturnしたHttpResponse(data)のデータはここで取得できる。
                     // フォームの下部に追記したspan部分の内容を書き換える。
-                    document.getElementById("text").textContent = data;
-                    console.log("Success");
+                    var sentence_list = data.split('["');
+                    const text = document.getElementById('text');
+                    for(let n=0;n<sentence_list.length;n+=1){
+                      text.innerHTML += '<li>'+sentence_list[n]+'</li>';
+                    }
+                    /*document.getElementById("text").textContent = data;
+                    console.log("Success");*/
+                    /*動くか分からん*/
                   });
         
                   // csrf_tokenの取得に使う
