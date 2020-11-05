@@ -13,5 +13,4 @@ urlpatterns = [
     path('inquiry/', views.calc, name="calc"),
     path("ajax/", views.call_bungou, name="call_bungou"),
     path('login/', views.login, name='login'),
-     url(r'^polls/static/polls/$',, name="login"),
 ]
