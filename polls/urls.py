@@ -12,5 +12,5 @@ urlpatterns = [
     path('<int:question_id>/vote/', views.vote, name='vote'),
     path('inquiry/', views.calc, name="calc"),
     path("ajax/", views.call_bungou, name="call_bungou"),
-    path('', views.login, name='login'),
+    path('login/', views.login, name='login'),
 ]
