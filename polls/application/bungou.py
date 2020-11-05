@@ -2,6 +2,7 @@
 
 import requests
 
+
 headers = {'User-Agent':https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip}
 
 url_1 = 'https://www.aozora.gr.jp/cards/000035/files/301_ruby_5915.zip'
@@ -199,7 +200,7 @@ info.update(make_info(original_text_5,sentences_5))
 #ここは関数化しない方がいいのかな... viewsよくわからん
 from janome.tokenizer import Tokenizer
 BEGIN = '__BEGIN__'
-END = '__END__' 
+END = '__END__'
 
 #after_list = []
 
@@ -228,7 +229,7 @@ class pycolor:
     FLASH = '\033[05m' #点滅
     RED_FLASH = '\033[05;41m' #赤背景+点滅
     END = '\033[0m'
-    
+
 
 import os
 import csv
@@ -262,7 +263,7 @@ import csv
         writer.writerow(datas)
         # writer.writerow("DONE")"""
 
-def search(param): 
+def search(param):
         #from janome.tokenizer import Tokenizer
     #t = Tokenizer()
     #print(param2)
@@ -282,7 +283,7 @@ def search(param):
 
 
     gokan_sentence_list = search2(param)
-    #print(gokan_dict)          
+    #print(gokan_dict)
     from dictionary import make_synonym_dict
     synonym_dict = {}
     synonym_dict=make_synonym_dict(param)
@@ -297,11 +298,11 @@ def search(param):
             f.write(sentence + '\n')
             #writer.writerow(gokan_sentence_list)
         # writer.writerow("DONE")"""
-    
 
 
 
-# 以下を追記(return_text()を呼び出すと"Hello!!"が返される)        
+
+# 以下を追記(return_text()を呼び出すと"Hello!!"が返される)
 def return_text():
     # return "Hello!"
     with open('polls/application/data.csv') as f:
