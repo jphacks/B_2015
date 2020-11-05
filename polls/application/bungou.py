@@ -315,7 +315,8 @@ def search(param):
 
 # 以下を追記(return_text()を呼び出すと"Hello!!"が返される)
 def return_text():
-    # return "Hello!"
+    return "Hello!"
+    """
     with open('polls/application/data.csv') as f:
         reader = csv.reader(f, lineterminator='\n,')
         datas = []
@@ -324,7 +325,7 @@ def return_text():
             datas.append(row)
     os.remove('polls/application/data.csv')
     return datas
-
+"""
 
     """
     with open(os.getcwd()+'/polls/application/'+'data.csv','a') as f:
