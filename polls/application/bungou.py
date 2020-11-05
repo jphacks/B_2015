@@ -276,7 +276,7 @@ def search(param):
         param2 = '"' + param + '":'
         gokan_sentence_list = []
         print(os.getcwd())
-        with open(os.getcwd()+'sitm.pythonanywhere.com/polls/application/'+'natume_gokan_dict.csv', encoding = 'utf-8')as f:
+        with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'natume_gokan_dict.csv', encoding = 'utf-8')as f:
             print("開けた！")
             for line in f:
                 #print(line)
@@ -295,7 +295,7 @@ def search(param):
     synonym_dict = {}
     #synonym_dict=make_synonym_dict(param)
     #print(synonym_dict)
-    with open(os.getcwd()+'sitm.pythonanywhere.com/polls/application/'+'nemuru_synonym_dict.tsv', encoding = 'utf-8')as f:
+    with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'nemuru_synonym_dict.tsv', encoding = 'utf-8')as f:
             for line in f:
                 if param in line:
                     param2 = '"'+param+'":'
@@ -308,7 +308,7 @@ def search(param):
         gokan_sentence_list += search2(synonym)
             #if gokan_dict.get(synonym):
     #for sentence in gokan_sentence_list:
-    with open(os.getcwd()+'sitm.pythonanywhere.com/polls/application/'+'data.csv','a') as f:
+    with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'data.csv','a') as f:
         for sentence in gokan_sentence_list:
             f.write(sentence + '\n')
             #writer.writerow(gokan_sentence_list)
