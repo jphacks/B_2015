@@ -270,6 +270,8 @@ def search(param):
         #from janome.tokenizer import Tokenizer
     #t = Tokenizer()
     #print(param2)
+    print("search:")
+    print(param)
     def search2(param):
         param2 = '"' + param + '":'
         gokan_sentence_list = []
