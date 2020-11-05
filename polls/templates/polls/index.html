@@ -59,7 +59,7 @@
                   .done(function(data) {
                     // views.pyのcall_bungou()にてreturnしたHttpResponse(data)のデータはここで取得できる。
                     // フォームの下部に追記したspan部分の内容を書き換える。
-                    var sentence_list = data.split('["');
+                    var sentence_list = data.split('\n');
                     const text = document.getElementById('text');
                     for(let n=0;n<sentence_list.length;n+=1){
                       text.innerHTML += '<li>'+sentence_list[n]+'</li>';
