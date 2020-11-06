@@ -284,8 +284,8 @@ def search(param):
                     _,line = line.split(param2)
                     gokan_sentence_list = line.split('\t')
                     break
-        if gokan_sentence_list == []:
-            return []
+
+        print(gokan_sentence_list)
         return gokan_sentence_list
 
 
