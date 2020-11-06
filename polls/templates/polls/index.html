@@ -25,7 +25,7 @@
             <h3 class="section-title">探したいワード</h3>
             <input type="text" size="50" id="input_form" placeholder="例) 書く">
             <input class="contact-submit" type="submit" value="探す" onclick="clickBtn()">
-            <!-- <button type="button" class="contact-submit" onclick="clickBtn()">探す</button> -->
+            <input class="contact-submit" type="reset" value="リセット">
 
             <!-- views.pyから渡された文字列を表示する。 -->
             <h3 class="section-title">検索結果</h3>
@@ -63,7 +63,7 @@
                     var sentence_list = data.split("::::::::::");
                     // text.innerHTML = ""
                     const text = document.getElementById('text');
-                    text.innerHTML = '';
+                    // text.innerHTML = '';
                     for(let n=0;n<sentence_list.length;n+=1){
                       text.innerHTML += '<li>'+sentence_list[n]+'</li>'+'</br>';
                     }
