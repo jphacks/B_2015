@@ -8,9 +8,9 @@ a {
   text-decoration: none;
 }
 
-/* li {
+li {
   list-style: none;
-} */
+}
 
 header {
   height: 90px;
@@ -98,6 +98,7 @@ input, textarea {
   border: 1px solid #dee7ec;
 }
 
+/*
 .defaultlist
 ,.defaultlist li{
 	padding-left:40px;
@@ -129,7 +130,7 @@ input, textarea {
 	border-right: 7px solid transparent;
 	border-bottom: 6px solid transparent;
 	border-left: 9px solid #aaa;
-}
+}*/
 
 .result {
   width : 90vw;
