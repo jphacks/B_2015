@@ -25,6 +25,7 @@
             <h3 class="section-title">探したいワード</h3>
             <input type="text" size="50" id="input_form" placeholder="例) 書く">
             <input class="contact-submit" type="submit" value="探す" onclick="clickBtn()">
+            <button type="submit" class="reset">リセット</button>
             <input class="contact-submit" value="リセット" onclick="window.location.reload();">
 
             <!-- views.pyから渡された文字列を表示する。 -->
@@ -32,12 +33,18 @@
             <!--div id="text" class="result"> </div-->
             <ul> 
               <!-- <li> list </li> -->
-              <def id="text" class="result"></def>
+              <li id="text" class="result"></li>
             </ul>
           
 
 
             <script>
+              $(function(){
+                  // 入力値をリセット
+                  $("button.reset").click(function(){
+                      input[type="text"].value="";
+                  })
+              });
                 function clickBtn() {
                   var txt = document.getElementById("input_form").value;
         
@@ -66,7 +73,8 @@
                     const text = document.getElementById('text');
                     // text.innerHTML = '';
                     for(let n=0;n<sentence_list.length;n+=1){
-                      text.innerHTML += '<li>'+sentence_list[n]+'</li>'+'</br>';
+                      text.innerHTML.append('<li>'+sentence_list[n]+'</li>'+'</br>');
+                      console.log(text.innerHTML[n]);
                     }
                     /*document.getElementById("text").textContent = data;
                     console.log("Success");*/
