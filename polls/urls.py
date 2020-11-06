@@ -13,5 +13,6 @@ urlpatterns = [
     # path('inquiry/', views.calc, name="calc"),
     path('login/', views.login, name='login'),
     path("ajax/", views.call_bungou, name="call_bungou"),
+    path('diary-list/', views.DiaryListView.as_view(), name="diary_list"),
     # path('login/', views.login, name='login'),
 ]
