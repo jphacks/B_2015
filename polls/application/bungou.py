@@ -276,13 +276,13 @@ def search(param):
         param2 = '"' + param + '":'
         gokan_sentence_list = []
         print(os.getcwd())
-        with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'akutagawa_gokan_dict.csv', encoding = 'utf-8')as f:
+        with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'akutagawa_gokan_dict.tsv', encoding = 'utf-8')as f:
             print("開けた！")
             for line in f:
                 #print(line)
                 if param2 in line:
                     _,line = line.split(param2)
-                    gokan_sentence_list = line.split(',')
+                    gokan_sentence_list = line.split('\t')
                     break
         if gokan_sentence_list == []:
             return []
