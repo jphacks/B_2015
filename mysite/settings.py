@@ -142,7 +142,7 @@ SITE_ID = 1
 
 # ログイン・ログアウト時のリダイレクト先
 LOGIN_REDIRECT_URL = 'home'
-ACCOUNT_LOGOUT_REDIRECT_URL = '/templates/login/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 # 認証方式を「メルアドとパスワード」に設定
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
