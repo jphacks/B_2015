@@ -31,7 +31,7 @@
             <h3 class="section-title">検索結果</h3>
             <!--div id="text" class="result"> </div-->
             <ul class = "defaultlist list1">
-              <li> list </li>
+              <!-- <li> list </li> -->
               <def id="text" class="result"></def>
             </ul>
           
@@ -61,7 +61,7 @@
                     // views.pyのcall_bungou()にてreturnしたHttpResponse(data)のデータはここで取得できる。
                     // フォームの下部に追記したspan部分の内容を書き換える。
                     var sentence_list = data.split("::::::::::");
-                    text.innerHTML = '<br>'
+                    // text.innerHTML = '<br>'
                     const text = document.getElementById('text');
                     for(let n=0;n<sentence_list.length;n+=1){
                       text.innerHTML += '<li>'+sentence_list[n]+'</li>'+'</br>';
