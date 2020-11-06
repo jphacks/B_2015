@@ -296,7 +296,7 @@ def search(param):
     #synonym_dict=make_synonym_dict(param)
     #print(synonym_dict)
     with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'natume_synonym_dict.tsv', encoding = 'utf-8')as f:
-        param2 = '"'+param+'":'
+            param2 = '"'+param+'":'
             for line in f:
                 if param2 in line:
                     _,line = line.split(param2)
