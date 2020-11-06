@@ -13,6 +13,16 @@ from django.http import HttpResponse
 # application/bungou.pyをインポートする
 from .application import bungou
 
+class DiaryListView(LoginRequiredMixin, generic.ListView):
+    model = Diary
+    template_name = 'diary_list.html'
+    paginate_by = 2
+
+    def get_queryset(self):
+        diaries = Diary.objects.filter(user=self.request.user).order_by('-created_at')
+        return diaries
+
+
 # ajaxでurl指定したメソッド
 def call_bungou(req):
     if req.method == 'GET':
