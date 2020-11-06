@@ -30,8 +30,9 @@
             <!-- views.pyから渡された文字列を表示する。 -->
             <h3 class="section-title">検索結果</h3>
             <!--div id="text" class="result"> </div-->
-            <ul>
-            <li id="text" class="result"></li>
+            <ul class = "defaultlist list1">
+              <li> list </li>
+              <def id="text" class="result"></def>
             </ul>
           
 
@@ -63,7 +64,7 @@
                     
                     const text = document.getElementById('text');
                     for(let n=0;n<sentence_list.length;n+=1){
-                      text.innerHTML += '<li>'+sentence_list[n]+'</li>';
+                      text.innerHTML += '<li>'+sentence_list[n]+'</li>'+'</br>';
                     }
                     /*document.getElementById("text").textContent = data;
                     console.log("Success");*/
