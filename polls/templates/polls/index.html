@@ -30,7 +30,7 @@
             <!-- views.pyから渡された文字列を表示する。 -->
             <h3 class="section-title">検索結果</h3>
             <!--div id="text" class="result"> </div-->
-            <ul class = "defaultlist list1">
+            <ul> 
               <!-- <li> list </li> -->
               <def id="text" class="result"></def>
             </ul>
@@ -61,6 +61,12 @@
                     // views.pyのcall_bungou()にてreturnしたHttpResponse(data)のデータはここで取得できる。
                     // フォームの下部に追記したspan部分の内容を書き換える。
                     var sentence_list = data.split("::::::::::");
+                    for(let n=0;n<sentence_list.length;n+=1){
+                      for(let i=0;i<sentence_list[n].length;i+=1){
+                        if(sentence_list[n][i]=='[')
+                          _,sentence_list[n]=sentence_list[n].split("['");
+                    }
+                    }
                     // text.innerHTML = ""
                     const text = document.getElementById('text');
                     // text.innerHTML = '';
