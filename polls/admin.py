@@ -2,11 +2,6 @@ from django.contrib import admin
 
 from .models import Choice, Question
 
-from .models import Diary
-
-
-admin.site.register(Diary)
-
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
