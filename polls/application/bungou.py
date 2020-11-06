@@ -286,6 +286,7 @@ def search(param):
                     break
 
         print(gokan_sentence_list)
+        print("aaa")
         return gokan_sentence_list
 
 
