@@ -61,14 +61,7 @@
                     // views.pyのcall_bungou()にてreturnしたHttpResponse(data)のデータはここで取得できる。
                     // フォームの下部に追記したspan部分の内容を書き換える。
                     var sentence_list = data.split("::::::::::");
-                    for(let n=0;n<sentence_list.length;n+=1){
-                      let i=1;
-                      while(i<sentence_list[n].length){
-                        if(sentence_list[n][i]=='[')
-                          _,sentence_list[n]=sentence_list[n].split("['");
-                          i+=1;
-                    }
-                    }
+                    
                     // text.innerHTML = ""
                     const text = document.getElementById('text');
                     // text.innerHTML = '';
