@@ -11,7 +11,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # application/bungou.pyをインポートする
-# from .application import bungou
+from .application import bungou
 
 # class DiaryListView(LoginRequiredMixin, generic.ListView):
 #     model = Diary
