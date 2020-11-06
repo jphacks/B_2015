@@ -3,7 +3,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
-from accounts.models import CustomUser
+# from accounts.models import CustomUser
 
 # class Diary(models.Model):
 #     """日記モデル"""
