@@ -63,6 +63,7 @@
                     var sentence_list = data.split("::::::::::");
                     // text.innerHTML = ""
                     const text = document.getElementById('text');
+                    text.innerHTML = '';
                     for(let n=0;n<sentence_list.length;n+=1){
                       text.innerHTML += '<li>'+sentence_list[n]+'</li>'+'</br>';
                     }
