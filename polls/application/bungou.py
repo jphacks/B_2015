@@ -285,15 +285,16 @@ def search(param):
             print("開けた！")
             for line in f:
                 #print(line)
-                t = 0
+                #t = 0
                 if param2 in line:
                     _,line = line.split(param2)
                     gokan_sentence_list = line.split('\t')
-                    t = random.randint(0,len(gokan_sentence_list)-1)
+                    #t = random.randint(0,len(gokan_sentence_list)-1)
+                    
                     break
-        print(gokan_sentence_list[t])
+        print(gokan_sentence_list)
         print("aaa")
-        return gokan_sentence_list[t]
+        return random.choice(gokan_sentence_list)
 
 
     gokan_sentence_list = search2(param)
