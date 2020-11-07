@@ -297,7 +297,7 @@ def search(param):
         if gokan_sentence_list!=[]:
             return random.choice(gokan_sentence_list)
         else:
-            return gokan_sentence_list
+            return ""
 
     gokan_sentence_list = []
     gokan_sentence_list.append(search2(param))
