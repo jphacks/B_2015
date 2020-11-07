@@ -265,6 +265,7 @@ def search(param):
         # writer.writerow("DONE")"""
 import os
 import csv
+import random
 #from dictionary import make_synonym_dict
 def search(param):
         #from janome.tokenizer import Tokenizer
@@ -284,13 +285,15 @@ def search(param):
             print("開けた！")
             for line in f:
                 #print(line)
+                t = 0
                 if param2 in line:
                     _,line = line.split(param2)
                     gokan_sentence_list = line.split('\t')
+                    t = random.randint(0,len(gokan_sentence_list)-1)
                     break
-        print(gokan_sentence_list)
+        print(gokan_sentence_list[t])
         print("aaa")
-        return gokan_sentence_list
+        return gokan_sentence_list[t]
 
 
     gokan_sentence_list = search2(param)
