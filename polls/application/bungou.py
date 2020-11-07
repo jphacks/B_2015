@@ -272,6 +272,10 @@ def search(param):
     #print(param2)
     print("search:")
     print(param)
+    def flatten(nested_list):
+        """2重のリストをフラットにする関数"""
+        return [e for inner_list in nested_list for e in inner_list]
+
     def search2(param):
         param2 = '"' + param + '":'
         gokan_sentence_list = []
@@ -284,7 +288,6 @@ def search(param):
                     _,line = line.split(param2)
                     gokan_sentence_list = line.split('\t')
                     break
-
         print(gokan_sentence_list)
         print("aaa")
         return gokan_sentence_list
@@ -309,6 +312,7 @@ def search(param):
         gokan_sentence_list += search2(synonym)
             #if gokan_dict.get(synonym):
     #for sentence in gokan_sentence_list:
+    flatten(gokan_sentence_list)
     with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'data.csv','a') as f:
         for sentence in gokan_sentence_list:
             f.write(sentence + '::::::::::')
