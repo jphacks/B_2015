@@ -299,8 +299,8 @@ def search(param):
         else:
             return gokan_sentence_list
 
-
-    gokan_sentence_list = search2(param)
+    gokan_sentence_list = []
+    gokan_sentence_list.append(search2(param))
     #print(gokan_dict)
     
     synonym_dict = {}
@@ -316,7 +316,7 @@ def search(param):
     
     for synonym in synonym_dict[param]:
             #print(synonym)
-        gokan_sentence_list += search2(synonym)
+        gokan_sentence_list.append(search2(synonym))
             #if gokan_dict.get(synonym):
     #for sentence in gokan_sentence_list:
     with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'data.csv','a') as f:
