@@ -32,20 +32,6 @@ ALLOWED_HOSTS = ['sitm.pythonanywhere.com',
 
 # Application definition
 
-# INSTALLED_APPS = [
-#     'polls.apps.PollsConfig',
-#     'django.contrib.admin',
-#     'django.contrib.auth',
-#     'django.contrib.contenttypes',
-#     'django.contrib.sessions',
-#     'django.contrib.messages',
-#     'django.contrib.staticfiles',
-#     'django.contrib.sites',
-#     'allauth',
-#     'allauth.account',
-#     'allauth.socialaccount',    # ソーシャル連携認証を使っていない場合でも必要
-# ]
-
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'django.contrib.admin',
@@ -55,7 +41,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',    # ソーシャル連携認証を使っていない場合でも必要
 ]
+
+# INSTALLED_APPS = [
+#     'polls.apps.PollsConfig',
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     'django.contrib.sites',
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
