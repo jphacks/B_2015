@@ -32,7 +32,7 @@
             <h3 class="section-title">検索結果</h3>
             <!--div id="text" class="result"> </div-->
             <ul> 
-              <!-- <li> list </li> -->
+              <li> list </li>
               <li id="text" class="result"></li>
             </ul>
           
@@ -74,7 +74,7 @@
                     // text.innerHTML = '';
                     for(let n=0;n<sentence_list.length;n+=1){
                       // text.innerHTML.append('<li>'+sentence_list[n]+'</li>'+'</br>');
-                      text.innerHTML += '<li>'+sentence_list[n]+'</li>';
+                      text.innerHTML += '<li>'+sentence_list[n]+'</li>'+'</br>';
                       console.log(text.innerHTML[n]);
                     }
                     /*document.getElementById("text").textContent = data;
