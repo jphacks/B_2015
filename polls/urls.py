@@ -18,6 +18,6 @@ urlpatterns = [
     # path('login/', views.DiaryListView.as_view(), name="login"),
     # path('login/', views.login, name='login'),
     # path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('accounts/', include('allauth.urls')),
+    # path('accounts/', include('allauth.urls')),
     # path('accounts/', include('django.contrib.auth.urls')), # 不要
 ]
