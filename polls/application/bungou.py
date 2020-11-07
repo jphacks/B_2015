@@ -294,7 +294,10 @@ def search(param):
                     break
         print(gokan_sentence_list)
         print("aaa")
-        return random.choice(gokan_sentence_list)
+        if gokan_sentence_list!=[]:
+            return random.choice(gokan_sentence_list)
+        else:
+            return gokan_sentence_list
 
 
     gokan_sentence_list = search2(param)
