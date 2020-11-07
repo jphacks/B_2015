@@ -290,7 +290,7 @@ def search(param):
                     break
         print(gokan_sentence_list)
         print("aaa")
-        return gokan_sentence_list
+        return flatten(gokan_sentence_list)
 
 
     gokan_sentence_list = search2(param)
@@ -312,9 +312,8 @@ def search(param):
         gokan_sentence_list += search2(synonym)
             #if gokan_dict.get(synonym):
     #for sentence in gokan_sentence_list:
-    flatten(gokan_sentence_list)
     with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'data.csv','a') as f:
-        for sentence in gokan_sentence_list:
+        for sentence in flatten(gokan_sentence_list):
             f.write(sentence + '::::::::::')
             #writer.writerow(gokan_sentence_list)
         # writer.writerow("DONE")"""
