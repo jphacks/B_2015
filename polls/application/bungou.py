@@ -313,7 +313,7 @@ def search(param):
             #if gokan_dict.get(synonym):
     #for sentence in gokan_sentence_list:
     with open(os.getcwd()+'/sitm.pythonanywhere.com/polls/application/'+'data.csv','a') as f:
-        for sentence in flatten(gokan_sentence_list):
+        for sentence in gokan_sentence_list:
             f.write(sentence + '::::::::::')
             #writer.writerow(gokan_sentence_list)
         # writer.writerow("DONE")"""
